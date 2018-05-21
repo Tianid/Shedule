@@ -1,0 +1,146 @@
+{% extends 'Shedule/base.html' %}
+{% block content %}
+
+    {% if query1_1 %}
+        <div class="container">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>День недели</th>
+                <th>Группа</th>
+                <th>Номер пары</th>
+                <th>Тип недели</th>
+                <th>Дисциплина</th>
+                <th>Преподаватель</th>
+                <th>Число</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for i in query1_1 %}
+
+              <tr>
+                <td>{{ i.fk_day_number }}</td>
+                <td>{{ i.fk_group_cipher }}</td>
+                <td>{{ i.fk_lesson_number }}</td>
+                <td>{{ i.fk_parity_odd }}</td>
+                <td>{{ i.fk_subject_cipher }}</td>
+                <td>{{ i.name  }} {{ i.surname }} {{ i.middle_name }}</td>
+                <td>{{ i.date }}</td>
+
+              </tr>
+            {% endfor %}
+
+            </tbody>
+          </table>
+         </div>
+
+
+
+    {% elif query1_2 %}
+
+
+        <div class="container">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Дисциплина</th>
+                <th>Преподаватель</th>
+                <th>Номер пары</th>
+                <th>День недели</th>
+                <th>Дата</th>
+                <th>Группа</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for i in query1_2 %}
+
+              <tr>
+                <td>{{ i.fk_subject_cipher }}</td>
+                <td>{{ i.name }} {{ i.surname }}  {{ i.middle_name }}</td>
+                <td>{{ i.fk_lesson_number }}</td>
+                <td>{{ i.fk_day_number }}</td>
+                <td>{{ i.date }}</td>
+                <td>{{ i.fk_group_cipher }}</td>
+              </tr>
+            {% endfor %}
+
+            </tbody>
+          </table>
+        </div>
+    {% endif %}
+
+    {% if error_for_query2 %}
+        <h1>{{ error_for_query2 }}</h1>
+    {% elif query2 %}
+
+        <div class="container">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                  <th>Дисциплина</th>
+                  <th>Преподаватель</th>
+                  <th>Дата</th>
+                  <th>Номер пары</th>
+
+              </tr>
+            </thead>
+            <tbody>
+            {% for i in query2 %}
+
+              <tr>
+                <td>{{ i.fk_subject_cipher }}</td>
+                <td>{{ i.name }} {{ i.surname }}  {{ i.middle_name }}</td>
+                <td>{{ i.date }}</td>
+                <td>{{ i.fk_lesson_number }}</td>
+              </tr>
+            {% endfor %}
+
+            </tbody>
+          </table>
+        </div>
+
+
+    {% endif %}
+
+    {% if query3 %}
+
+         <div class="container">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                  <th>Преподаватель</th>
+                  <th>Табельный номер</th>
+                  <th>Звание</th>
+                  <th>Ученая степень</th>
+                  <th>Должность</th>
+                  <th>Дата избрания</th>
+                  <th>Кафедра</th>
+                  <th>Дисциплины</th>
+
+              </tr>
+            </thead>
+            <tbody>
+            {% for i in query3 %}
+
+              <tr>
+                <td>{{ i.name }} {{ i.surname }}  {{ i.middle_name }}</td>
+                <td>{{ i.personal_number }}</td>
+                <td>{{ i.rank }}</td>
+                <td>{{ i.academic_degree }}</td>
+                <td>{{ i.position }}</td>
+                <td>{{ i.election_date }}</td>
+                <td>{{ i.department }}</td>
+                <td>{{ i.subject_name }} {{ i.lesson_type }}</td>
+              </tr>
+            {% endfor %}
+
+            </tbody>
+          </table>
+        </div>
+
+    {% elif error_for_query3 %}
+       <h1>{{ error_for_query3 }}</h1>
+    {% endif %}
+
+
+{% endblock %}

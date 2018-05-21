@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="UD@localhost" uuid="1dcf6ad6-0a53-4dab-8503-2d137dda9f24">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/UD</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Tianid@localhost" uuid="8b6607ea-2cd9-41f0-b362-f5be92ce1d5e">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/Tianid</jdbc-url>
+    </data-source>
+  </component>
+</project>

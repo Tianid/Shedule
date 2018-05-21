@@ -1,0 +1,47 @@
+{% extends 'Shedule/base.html' %}
+{% block content %}
+
+    <a href="{% url 'dgs_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+
+
+        <div class="container">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>День недели</th>
+                <th>Группа</th>
+                <th>Номер пары</th>
+                <th>Тип недели</th>
+                <th>Дисциплина</th>
+                <th>Число</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for i in post %}
+
+              <tr>
+                <td>{{ i.fk_day_number }}</td>
+                <td>{{ i.fk_group_cipher }}</td>
+                <td>{{ i.fk_lesson_number }}</td>
+                <td>{{ i.fk_parity_odd }}</td>
+                <td>{{ i.fk_subject_cipher }}</td>
+                <td>{{ i.date }}</td>
+                <td><a class="btn btn-default" href="{% url 'dgs_edit' pk=i.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                <td><a class="btn btn-default" href="{% url 'dgs_del' pk=i.pk %}"><span class="glyphicon glyphicon-minus"></span></a></td>
+
+              </tr>
+            {% endfor %}
+
+            </tbody>
+          </table>
+         </div>
+
+
+{#        <p class="badge-dark">  {{ i.fk_day_number }} {{ i.fk_group_cipher }} {{ i.fk_lesson_number }} {{ i.fk_parity_odd }} {{ i.fk_subject_cipher }} {{ i.date }}#}
+{#            <a class="btn btn-default" href="{% url 'dgs_del' pk=i.pk %}"><span class="glyphicon glyphicon-minus"></span></a></p>#}
+
+
+
+
+
+{% endblock %}

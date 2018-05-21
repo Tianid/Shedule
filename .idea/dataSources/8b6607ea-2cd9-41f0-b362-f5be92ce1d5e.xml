@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Tianid@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.8">
+    <root id="1">
+      <ServerVersion>10.3</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="Practic">
+      <ObjectId>16443</ObjectId>
+    </database>
+    <database id="3" parent="1" name="Tianid">
+      <ObjectId>16385</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="4" parent="1" name="UD">
+      <ObjectId>16661</ObjectId>
+    </database>
+    <database id="5" parent="1" name="UD_K">
+      <ObjectId>16465</ObjectId>
+    </database>
+    <database id="6" parent="1" name="postgres">
+      <ObjectId>13267</ObjectId>
+      <Comment>default administrative connection database</Comment>
+    </database>
+    <role id="7" parent="1" name="Tianid">
+      <ObjectId>16384</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="8" parent="1" name="pg_monitor">
+      <ObjectId>3373</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="9" parent="1" name="pg_read_all_settings">
+      <ObjectId>3374</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="10" parent="1" name="pg_read_all_stats">
+      <ObjectId>3375</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="11" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="12" parent="1" name="pg_stat_scan_tables">
+      <ObjectId>3377</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="13" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <schema id="14" parent="3" name="information_schema">
+      <ObjectId>12976</ObjectId>
+    </schema>
+    <schema id="15" parent="3" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+      <Comment>system catalog schema</Comment>
+    </schema>
+    <schema id="16" parent="3" name="pg_temp_1">
+      <ObjectId>11736</ObjectId>
+    </schema>
+    <schema id="17" parent="3" name="pg_toast">
+      <ObjectId>99</ObjectId>
+      <Comment>reserved schema for TOAST tables</Comment>
+    </schema>
+    <schema id="18" parent="3" name="pg_toast_temp_1">
+      <ObjectId>11737</ObjectId>
+    </schema>
+    <schema id="19" parent="3" name="public">
+      <ObjectId>2200</ObjectId>
+      <Comment>standard public schema</Comment>
+      <IntrospectionTimestamp>2018-05-13.22:43:42.514</IntrospectionTimestamp>
+      <IntrospectionStateNumber>791</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <sequence id="20" parent="19" name="lol_id_seq">
+      <ObjectId>17223</ObjectId>
+      <StateNumber>786</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="21" parent="19" name="Autho_id_seq">
+      <ObjectId>16386</ObjectId>
+      <StateNumber>557</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="22" parent="19" name="Driver_id_seq">
+      <ObjectId>16394</ObjectId>
+      <StateNumber>558</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="23" parent="19" name="Orders_id_seq">
+      <ObjectId>16402</ObjectId>
+      <StateNumber>559</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="24" parent="19" name="kek_id_seq">
+      <ObjectId>16431</ObjectId>
+      <StateNumber>571</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <table id="25" parent="19" name="Driver">
+      <ObjectId>16396</ObjectId>
+      <StateNumber>559</StateNumber>
+    </table>
+    <table id="26" parent="19" name="Orders">
+      <ObjectId>16404</ObjectId>
+      <StateNumber>559</StateNumber>
+    </table>
+    <table id="27" parent="19" name="autho">
+      <ObjectId>16388</ObjectId>
+      <StateNumber>568</StateNumber>
+    </table>
+    <table id="28" parent="19" name="kek">
+      <ObjectId>16428</ObjectId>
+      <StateNumber>573</StateNumber>
+    </table>
+    <table id="29" parent="19" name="lol">
+      <ObjectId>17225</ObjectId>
+      <StateNumber>791</StateNumber>
+    </table>
+    <column id="30" parent="25" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>558</StateNumber>
+      <DefaultExpression>nextval(&apos;&quot;Driver_id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>Driver_id_seq</SequenceName>
+    </column>
+    <column id="31" parent="25" name="Number">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>558</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="32" parent="25" name="Second_name">
+      <Position>3</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <StateNumber>558</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="33" parent="25" name="Category">
+      <Position>4</Position>
+      <DataType>char(50)|0s</DataType>
+      <StateNumber>558</StateNumber>
+      <TypeId>1042</TypeId>
+    </column>
+    <column id="34" parent="25" name="Experience">
+      <Position>5</Position>
+      <DataType>real|0s</DataType>
+      <StateNumber>558</StateNumber>
+      <TypeId>700</TypeId>
+    </column>
+    <column id="35" parent="25" name="Address">
+      <Position>6</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <StateNumber>558</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="36" parent="25" name="Year_of_birth">
+      <Position>7</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>558</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="37" parent="25" name="Driver_pkey">
+      <ObjectId>16400</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="38" parent="25" name="Driver_pkey">
+      <ObjectId>16401</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>Driver_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="39" parent="26" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>559</StateNumber>
+      <DefaultExpression>nextval(&apos;&quot;Orders_id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>Orders_id_seq</SequenceName>
+    </column>
+    <column id="40" parent="26" name="Driver">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>559</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="41" parent="26" name="Autho">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>559</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="42" parent="26" name="Range">
+      <Position>4</Position>
+      <DataType>real|0s</DataType>
+      <StateNumber>559</StateNumber>
+      <TypeId>700</TypeId>
+    </column>
+    <column id="43" parent="26" name="Mass">
+      <Position>5</Position>
+      <DataType>real|0s</DataType>
+      <StateNumber>559</StateNumber>
+      <TypeId>700</TypeId>
+    </column>
+    <column id="44" parent="26" name="Cost">
+      <Position>6</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>559</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="45" parent="26" name="Date">
+      <Position>7</Position>
+      <DataType>date|0s</DataType>
+      <StateNumber>559</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <index id="46" parent="26" name="Orders_pkey">
+      <ObjectId>16408</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="47" parent="26" name="Orders_pkey">
+      <ObjectId>16409</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>Orders_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="48" parent="26" name="Driver">
+      <ObjectId>16410</ObjectId>
+      <ColNames>Driver</ColNames>
+      <RefTableId>16396</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>Driver</RefTableName>
+      <RefKeyName>Driver_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="49" parent="26" name="Autho">
+      <ObjectId>16415</ObjectId>
+      <ColNames>Autho</ColNames>
+      <RefTableId>16388</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>autho</RefTableName>
+      <RefKeyName>Autho_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="50" parent="27" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>557</StateNumber>
+      <DefaultExpression>nextval(&apos;&quot;Autho_id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>Autho_id_seq</SequenceName>
+    </column>
+    <column id="51" parent="27" name="Car_number">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>557</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="52" parent="27" name="Brand">
+      <Position>3</Position>
+      <DataType>char(10)|0s</DataType>
+      <StateNumber>557</StateNumber>
+      <TypeId>1042</TypeId>
+    </column>
+    <column id="53" parent="27" name="Mileage">
+      <Position>4</Position>
+      <DataType>real|0s</DataType>
+      <StateNumber>557</StateNumber>
+      <TypeId>700</TypeId>
+    </column>
+    <column id="54" parent="27" name="Carrying">
+      <Position>5</Position>
+      <DataType>real|0s</DataType>
+      <StateNumber>557</StateNumber>
+      <TypeId>700</TypeId>
+    </column>
+    <index id="55" parent="27" name="Autho_pkey">
+      <ObjectId>16392</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="56" parent="27" name="Autho_pkey">
+      <ObjectId>16393</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>Autho_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="57" parent="28" name="time">
+      <Position>1</Position>
+      <DataType>time(1)|0s</DataType>
+      <StateNumber>573</StateNumber>
+      <TypeId>1083</TypeId>
+    </column>
+    <column id="58" parent="28" name="id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>571</StateNumber>
+      <DefaultExpression>nextval(&apos;kek_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>kek_id_seq</SequenceName>
+    </column>
+    <index id="59" parent="28" name="kek_pkey">
+      <ObjectId>16437</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="60" parent="28" name="kek_pkey">
+      <ObjectId>16438</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>kek_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="61" parent="29" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>786</StateNumber>
+      <DefaultExpression>nextval(&apos;lol_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>lol_id_seq</SequenceName>
+    </column>
+    <column id="62" parent="29" name="date">
+      <Position>2</Position>
+      <DataType>date|0s</DataType>
+      <StateNumber>786</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="63" parent="29" name="asd_asd">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>786</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="64" parent="29" name="asd">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>788</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="65" parent="29" name="dsa_dsa">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>789</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="66" parent="29" name="lol_dsa">
+      <Position>6</Position>
+      <DataType>date|0s</DataType>
+      <StateNumber>790</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="67" parent="29" name="lol_asd">
+      <Position>7</Position>
+      <DataType>date|0s</DataType>
+      <StateNumber>791</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <index id="68" parent="29" name="lol_id_uindex">
+      <ObjectId>17231</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="69" parent="29" name="lol_pkey">
+      <ObjectId>17229</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="70" parent="29" name="lol_pkey">
+      <ObjectId>17230</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>lol_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

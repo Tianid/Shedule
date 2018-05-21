@@ -1,0 +1,82 @@
+{% extends 'Shedule/base.html' %}
+{% block content %}
+
+<h1 class="h1">Запросы:</h1>
+    <p></p>
+Когда какая пара:
+    <form method="POST" class="post-form" action="{% url 'get_sql1'  %}" >
+        {% csrf_token %}
+
+        Дата
+        <input data-date-format="yyyy-mm-dd" id="datepicker" name="val1">
+
+        День недели
+        <select name = "val2" >
+            <option selected value="" >----</option>
+            {% for i in day_number %}
+                  <option value = {{ i.day_number }}>{{ i.name }}</option>
+            {% endfor %}
+        </select>
+
+        Номер пары
+        <select name = "val3" >
+            <option selected value="" >----</option>
+            <option value=1 >Первая пара</option>
+            <option value=2 >Вторая пара</option>
+            <option value=3 >Третья пара</option>
+            <option value=4 >Четвертая пара</option>
+            <option value=5 >Пятая пара</option>
+            <option value=6 >Шестая пара</option>
+        </select>
+
+        Группа
+        <select name = val4>
+            <option value="">----</option>
+            {% for i in groups %}
+                  <option value = {{ i.id }}>{{ i.group_cipher }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit" class="save btn btn-default">Apply</button>
+    </form>
+
+    <p></p>
+Когда какой тип пары:
+
+    <form method="POST" class="post-form" action="{% url 'get_sql2'  %}" >
+        {% csrf_token %}
+
+
+        Дисциплина
+        <select name = "val1" >
+            <option selected value="" >----</option>
+            {% for i in subject %}
+                  <option value = {{ i.id }}>{{ i.subject_name }} {{ i.lesson_type }}</option>
+            {% endfor %}
+
+        </select>
+
+        Группа
+        <select name = val2>
+            <option value="">----</option>
+            {% for i in groups %}
+                  <option value = {{ i.id }}>{{ i.group_cipher }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit" class="save btn btn-default">Apply</button>
+    </form >
+    <p></p>
+Найти преподавателя
+    <form method="POST" class="post-form" action="{% url 'get_sql3'  %}">
+    {% csrf_token %}
+        Имя <input type="text" name = val1>
+        Фамилия <input type="text" name = val2>
+        Отчество <input type="text" name = val3>
+        <button type="submit" class="save btn btn-default">Apply</button>
+    </form>
+
+
+</p>
+
+{% endblock %}

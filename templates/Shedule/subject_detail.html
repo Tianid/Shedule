@@ -1,0 +1,46 @@
+{% extends 'Shedule/base.html' %}
+{% block content %}
+
+    <a href="{% url 'subject_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+
+
+
+
+
+
+    <div class="container">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Шифр дисциплины</th>
+                <th>Тип пары</th>
+                <th>Аудитория</th>
+                <th>Дисциплина</th>
+                <th>Преподаватель</th>
+              </tr>
+            </thead>
+            <tbody>
+
+            {% for i in post %}
+
+              <tr>
+                <td>{{ i.subject_cipher}}</td>
+                <td>{{ i.lesson_type }}</td>
+                <td>{{ i.lecture_hall }}</td>
+                <td>{{ i.subject_name }}</td>
+                <td>{{ i.fk_teacher }}</td>
+                <td><a class="btn btn-default" href="{% url 'subject_edit' pk=i.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                <td><a class="btn btn-default" href="{% url 'subject_del' pk=i.pk %}"><span class="glyphicon glyphicon-minus"></span></a></td>
+
+              </tr>
+            {% endfor %}
+
+            </tbody>
+          </table>
+         </div>
+
+
+
+
+
+{% endblock %}
