@@ -1,11 +1,6 @@
 {% extends 'Shedule/base.html' %}
 {% block content %}
 
-     <a href="{% url 'teacher_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-
-
-
-
 {#     <p class="badge-dark">  {{ i.personal_number }} {{ i.name }} {{ i.surname }} {{ i.middle_name }} {{ i.rank }} {{ i.academic_degree }} {{ i.position }} {{ i.election_date }} {{ i.department }}<a class="btn btn-default" href="{% url 'teacher_edit' pk=i.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>#}
 {#            <a class="btn btn-default" href="{% url 'teacher_del' pk=i.pk %}"><span class="glyphicon glyphicon-minus"></span></a></p>#}
 {#    <p class="badge-dark">  {{ i.personal_number }} {{ i.name }} {{ i.surname }} {{ i.middle_name }} {{ i.rank }} {{ i.academic_degree }} {{ i.position }} {{ i.election_date }} {{ i.department }}#}
@@ -14,6 +9,8 @@
 {#    </p>#}
 
     <div class="container">
+    Добавить запись    <a class="btn btn-default" href="{% url 'teacher_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            <p></p>
           <table class="table table-bordered">
             <thead>
               <tr>

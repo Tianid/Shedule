@@ -1,4 +1,8 @@
+from django.core import exceptions
 from django.shortcuts import render, get_object_or_404
+# from django.http import HttpResponse
+# from django.shortcuts import render_to_response
+# from django.http import Http404
 from .models import *
 from .forms import *
 from django.shortcuts import redirect
@@ -42,6 +46,7 @@ def get_sql1(request):
         if i == 'csrfmiddlewaretoken':
             continue
         list.append(request.POST[i])
+
 
     for i in range(len(keys)):
         dict.update({keys[i]:list[i]})
@@ -103,7 +108,11 @@ def get_sql3(request):
     for i in request.POST:
         if i == 'csrfmiddlewaretoken':
             continue
-        list.append(request.POST[i])
+        list.append(deff(request.POST[i]))
+    for i in list:
+        if i == "Invalid input data":
+            error = "Invalid query!"
+            return render(request, 'Shedule/SQL-answer.html', {'error_for_query3': error})
 
 
     for i in range(len(keys)):
@@ -125,6 +134,29 @@ def get_sql3(request):
     else:
         error = "Invalid query!"
         return render(request,'Shedule/SQL-answer.html',{'error_for_query3':error})
+
+
+
+def deff(value):
+    str= value
+    str2=""
+    str = str.strip()
+
+
+    if len(str) > 100 :
+        error = "Invalid input data"
+        return error
+
+    for i in str:
+        j=ord(i)
+        if  (j >= 1040 and j<= 1103)  or (j == 45) or (j == 32):
+            str2+=i
+        else:
+            error = "Invalid input data"
+            return error
+
+    return str2
+
 # =================================== GROUPS VIEW ===================================
 def groups_news(request):
 

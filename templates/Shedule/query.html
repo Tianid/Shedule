@@ -41,7 +41,7 @@
     </form>
 
     <p></p>
-Когда какой тип пары:
+Когда,какой парой, какой преподаватель ведет выбранную дисциплину у выбранной группы:
 
     <form method="POST" class="post-form" action="{% url 'get_sql2'  %}" >
         {% csrf_token %}
@@ -67,7 +67,7 @@
         <button type="submit" class="save btn btn-default">Apply</button>
     </form >
     <p></p>
-Найти преподавателя
+Найти преподавателя:
     <form method="POST" class="post-form" action="{% url 'get_sql3'  %}">
     {% csrf_token %}
         Имя <input type="text" name = val1>
@@ -75,6 +75,10 @@
         Отчество <input type="text" name = val3>
         <button type="submit" class="save btn btn-default">Apply</button>
     </form>
+
+
+
+
 
 
 </p>
