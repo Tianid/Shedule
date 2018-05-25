@@ -3,7 +3,7 @@
 
 <h1 class="h1">Запросы:</h1>
     <p></p>
-Когда какая пара:
+<h3>Поиск пары:</h3>
     <form method="POST" class="post-form" action="{% url 'get_sql1'  %}" >
         {% csrf_token %}
 
@@ -41,7 +41,7 @@
     </form>
 
     <p></p>
-Когда,какой парой, какой преподаватель ведет выбранную дисциплину у выбранной группы:
+    <h3>Поиск преподавателя по группе и дисциплине:</h3>
 
     <form method="POST" class="post-form" action="{% url 'get_sql2'  %}" >
         {% csrf_token %}
@@ -67,11 +67,11 @@
         <button type="submit" class="save btn btn-default">Apply</button>
     </form >
     <p></p>
-Найти преподавателя:
+    <h3>Поиск преподавателся по ФИО:</h3>
     <form method="POST" class="post-form" action="{% url 'get_sql3'  %}">
     {% csrf_token %}
-        Имя <input type="text" name = val1>
-        Фамилия <input type="text" name = val2>
+        Фамилия <input type="text" name = val1>
+        Имя <input type="text" name = val2>
         Отчество <input type="text" name = val3>
         <button type="submit" class="save btn btn-default">Apply</button>
     </form>

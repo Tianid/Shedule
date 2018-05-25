@@ -68,11 +68,13 @@ def get_sql1(request):
     if len(str) > 5:
         query = DayGroupsSubject.objects.raw('select day_groups_subject.id,teacher.id,fk_subject_cipher,name,surname,middle_name from day_groups_subject,teacher,subject  {} {} order by fk_day_number,fk_lesson_number'.format(
                 str, str2))
+
         return render(request, 'Shedule/SQL-answer.html', {'query1_1': query})
     else:
         # query = DayGroupsSubject.objects.all().order_by('fk_day_number','fk_lesson_number')
         str1 = "where fk_subject_cipher = subject.id and teacher.id = subject.fk_teacher "
         query = DayGroupsSubject.objects.raw('select day_groups_subject.id,fk_subject_cipher,fk_lesson_number,fk_day_number,fk_group_cipher,name,surname,middle_name from day_groups_subject,subject,teacher {}'.format(str1))
+
         return render(request,'Shedule/SQL-answer.html',{'query1_2':query})
 
 
@@ -102,7 +104,7 @@ def get_sql2(request):
 def get_sql3(request):
     list = []
     dict = {}
-    keys = ["name", "surname", "middle_name"]
+    keys = ["surname","name", "middle_name"]
 
     str = "where"
     for i in request.POST:
@@ -129,7 +131,7 @@ def get_sql3(request):
     print(str)
     if len(str) > 5:
         query = Subject.objects.raw('select subject.id,name,surname,middle_name,position,rank,academic_degree,department,election_date,personal_number from teacher,subject {} and teacher.id = subject.fk_teacher'.format(str))
-
+        print(query.query)
         return render(request,'Shedule/SQL-answer.html',{'query3':query})
     else:
         error = "Invalid query!"
