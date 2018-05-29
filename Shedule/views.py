@@ -92,6 +92,10 @@ def get_sql2(request):
         if i == 'csrfmiddlewaretoken':
             continue
         list.append(request.POST[i])
+    if list[0]!="" and list[1]=="":
+        print(list[0])
+        query=DayGroupsSubject.objects.raw('select id,fk_group_cipher,fk_subject_cipher,date,fk_lesson_number from day_groups_subject  where fk_subject_cipher= {}'.format(list[0]))
+        return  render(request,'Shedule/SQL-answer.html',{'query2_2':query})
     if list[0]=="" or list[1]=="":
         error = "Wrong query!"
         return render(request,'Shedule/SQL-answer.html',{'error_for_query2':error})

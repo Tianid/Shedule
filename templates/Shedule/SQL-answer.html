@@ -143,6 +143,39 @@
 
 
     {% endif %}
+    {% if query2_2 %}
+
+        <div class="container">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                  <th>Преподаватель</th>
+                  <th>Дисциплина</th>
+                  <th>Дата</th>
+                  <th>Номер пары</th>
+
+
+
+              </tr>
+            </thead>
+            <tbody>
+            {% for i in query2_2 %}
+
+              <tr>
+                <td>{{ i.fk_group_cipher }}</td>
+                <td>{{ i.fk_subject_cipher }}</td>
+                <td>{{ i.date }}</td>
+                <td>{{ i.fk_lesson_number }}</td>
+
+              </tr>
+            {% endfor %}
+
+            </tbody>
+          </table>
+        </div>
+
+
+    {% endif %}
 
 
 {% endblock %}
