@@ -1,36 +1,15 @@
-from django.core import exceptions
+
 from django.shortcuts import render, get_object_or_404
-# from django.http import HttpResponse
-# from django.shortcuts import render_to_response
-# from django.http import Http404
-from .models import *
 from .forms import *
 from django.shortcuts import redirect
-from django.utils import timezone
+
 
 # Create your views here.
 
 def query (request):
-    if request.method == "POST":
-        print("yeah!!!!")
-    from django.db import connection,transaction
-    # posts = LessonNumber.objects.raw('select * from lesson_number')
-    # posts = LessonNumber.objects.raw('select * from lesson_number')
-    # posts1 = DayOfTheWeek.objects.raw('select * from day_of_the_week')
-    # posts2 = DayGroupsSubject.objects.raw('select * from day_groups_subject')
-
-    # posts = DayOfTheWeek.objects.all()
-    # print(posts.query)
-    # posts = LessonNumbers.objects.filter(lesson_number=3)
-    # print(posts)
-    # return render(request,'Shedule/query.html',{'posts':posts,'kek':posts1,'kek2':posts2})
     groups = Groups.objects.raw('select id,group_cipher from groups ')
     day_number = DayOfTheWeek.objects.raw('select day_number,name from day_of_the_week')
     subject = Subject.objects.raw('select id,subject_name from subject')
-    # subjects = Subject.objects.raw('select id,subject_name,lesson_type from subject')
-
-
-
     return render(request, 'Shedule/query.html', {'groups':groups, 'day_number':day_number, 'subject':subject})
 
 
@@ -61,7 +40,6 @@ def get_sql1(request):
             else:
                 str+=" and "+i+" "+"="+" "+"'{}'".format( dict.get(i))
 
-    # str2 = "and fk_subject_cipher = (select teacher.id,teacher.name,teacher.surname,teacher.middle_name from teacher where id = fk_subject_cipher )"
     str2 = "and fk_subject_cipher = subject.id and teacher.id = subject.fk_teacher  "
 
 
@@ -71,29 +49,18 @@ def get_sql1(request):
 
         return render(request, 'Shedule/SQL-answer.html', {'query1_1': query})
     else:
-        # query = DayGroupsSubject.objects.all().order_by('fk_day_number','fk_lesson_number')
         str1 = "where fk_subject_cipher = subject.id and teacher.id = subject.fk_teacher "
         query = DayGroupsSubject.objects.raw('select day_groups_subject.id,fk_subject_cipher,fk_lesson_number,fk_day_number,fk_group_cipher,name,surname,middle_name from day_groups_subject,subject,teacher {}'.format(str1))
 
         return render(request,'Shedule/SQL-answer.html',{'query1_2':query})
 
-
-    # {'query': query}
-    # return render(request,'Shedule/test.html',{'query4':query4})
-
 def get_sql2(request):
-
-
     list = []
-    # keys = ["fk_subject_cipher", "fk_group_cipher"]
-    # dict = {}
-
     for i in request.POST:
         if i == 'csrfmiddlewaretoken':
             continue
         list.append(request.POST[i])
     if list[0]!="" and list[1]=="":
-        print(list[0])
         query=DayGroupsSubject.objects.raw('select id,fk_group_cipher,fk_subject_cipher,date,fk_lesson_number from day_groups_subject  where fk_subject_cipher= {}'.format(list[0]))
         return  render(request,'Shedule/SQL-answer.html',{'query2_2':query})
     if list[0]=="" or list[1]=="":
@@ -135,7 +102,6 @@ def get_sql3(request):
     print(str)
     if len(str) > 5:
         query = Subject.objects.raw('select subject.id,name,surname,middle_name,position,rank,academic_degree,department,election_date,personal_number from teacher,subject {} and teacher.id = subject.fk_teacher'.format(str))
-        print(query.query)
         return render(request,'Shedule/SQL-answer.html',{'query3':query})
     else:
         error = "Invalid query!"
@@ -172,8 +138,6 @@ def groups_news(request):
 
                 post = form.save(commit=False)
                 post.save()
-                answer = "Saved!"
-                # return render(request,'Shedule/groups_edit.html',{'form':form,'answer':answer})
                 return redirect('groups_detail')
 
     else:
@@ -201,8 +165,6 @@ def groups_edit(request, pk):
 
 def groups_del(request,pk):
     Groups.objects.filter(id=pk).delete()
-    # post.objects.raw('delete from groups where id = pk')
-
     return redirect('groups_detail')
 
 # =================================== TEACHER VIEW ===================================
@@ -214,8 +176,6 @@ def teacher_news(request):
 
                 post = form.save(commit=False)
                 post.save()
-                answer = "Saved!"
-                # return render(request,'Shedule/groups_edit.html',{'form':form,'answer':answer})
                 return redirect('teacher_detail')
 
     else:
@@ -260,8 +220,6 @@ def subject_news(request):
 
                 post = form.save(commit=False)
                 post.save()
-                answer = "Saved!"
-                # return render(request,'Shedule/groups_edit.html',{'form':form,'answer':answer})
                 return redirect('subject_detail')
 
     else:
@@ -303,8 +261,6 @@ def dgs_news(request):
 
                 post = form.save(commit=False)
                 post.save()
-                answer = "Saved!"
-                # return render(request,'Shedule/groups_edit.html',{'form':form,'answer':answer})
                 return redirect('dgs_detail')
 
     else:

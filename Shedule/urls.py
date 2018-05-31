@@ -10,9 +10,9 @@ urlpatterns = [
 
     path('groups/new/', views.groups_news, name='groups_new'),
     re_path(r'^groups/detail',views.groups_detail,name='groups_detail'),
-    # re_path(r'groups/(?P<pk>\d+)/$',views.groups_detail,name='groups_detail')
+
     re_path(r'^groups/(?P<pk>\d+)/edit/$', views.groups_edit, name='groups_edit'),
-    # path('groups/edit',views.groups_edit,name='groups_edit'),
+
     re_path(r'groups/(?P<pk>\d+)/detail/$',views.groups_del,name='groups_del'),
 
     path('teacher/new/', views.teacher_news, name='teacher_new'),

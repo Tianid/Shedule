@@ -1,9 +1,5 @@
 {% extends 'Shedule/base.html' %}
 {% block content %}
-
-
-
-
         <div class="container">
             Добавить запись    <a class="btn btn-default" href="{% url 'dgs_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
             <p></p>
@@ -37,13 +33,4 @@
             </tbody>
           </table>
          </div>
-
-
-{#        <p class="badge-dark">  {{ i.fk_day_number }} {{ i.fk_group_cipher }} {{ i.fk_lesson_number }} {{ i.fk_parity_odd }} {{ i.fk_subject_cipher }} {{ i.date }}#}
-{#            <a class="btn btn-default" href="{% url 'dgs_del' pk=i.pk %}"><span class="glyphicon glyphicon-minus"></span></a></p>#}
-
-
-
-
-
 {% endblock %}
